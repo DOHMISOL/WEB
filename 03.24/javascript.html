@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ttt</title>
+  </head>
+  <body>
+    <input type="text">
+    <br>
+    <input type="text" id="alertText" value="">
+    <input type="button" id="alertBtn" value="버튼">
+  </body>
+
+  <script>
+    let textToExpressOnConsole;
+    console.log(document.getElementById("alertBtn"));
+    document.getElementById("alertBtn").addEventListener('click',function(){
+        textToExpressOnConsole = document.getElementById("alertText").value;
+        alert(textToExpressOnConsole);
+        console.log(textToExpressOnConsole);
+    });
+
+    for( alert(1) ; !alert(2); alert(4)){
+      console.log('3-1');
+      console.log('3-2');
+      console.log('3-3');
+      console.log('3-4');
+    }
+    for(1;2;4){
+      3
+    }
+    // for( alert(1) ; alert(2); alert(4)){
+    //   console.log('3-1');
+    //   console.log('3-2');
+    //   console.log('3-3');
+    //   console.log('3-4');
+    // }
+    // alert("hello world") //브라우저에만 있는 기능
+  </script>
+
+</html>

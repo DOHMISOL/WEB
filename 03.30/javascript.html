@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js</title>
+  </head>
+  <body>
+    <input type="text" id="textLine1" >
+    <br>
+    <input type="text" id="textLine2" >
+    <br>
+    <input type="text" id="textLine3" >
+    <br>
+    <input type="button" id="textButton" value="결과">
+  </body>
+  <script>
+    // let human1 = {}, human2 = {}, human3 = {};
+    // human1.age = "20";
+    // human1.height = "180cm";
+    // human1.name = "john";
+    // console.log(human1);
+    // human2.age = "30";
+    // human2.height = "160cm";
+    // human2.name = "jane";
+    // console.log(human2);
+    // human3.age = "25";
+    // human3.height = "170cm";
+    // human3.name = "jack";
+    // console.log(human3);
+    // //false,undifined, null, 0아니aus
+    // //console.log(var3);
+    // if(1+1){
+    //   console.log("if");
+    // }
+    // // 1 한번 실행하고
+    // // 2,3,4 무한반복
+    // // (2가 false일때까지)
+    //
+    // for(let i=1244; i > -100 ; i = i-100){
+    //   console.log(i);
+    // }
+    // console.log(50%8);
+    // console.log(1==5);
+    //
+    // if(true || true){
+    //   console.log("true || true");
+    // }
+    //
+    // if (true || false) {
+    //   console.log("true || false");
+    // }
+    //
+    // if (false || true) {
+    //   console.log("false || true");
+    // }
+    //
+    // if (false || false) {
+    //   console.log("false || false");
+    // }
+    //
+    // for(let i=0 ; i<101 ; i++){
+    //   if(i%2 != 0){
+    //     console.log(i + "홀수");
+    //   }
+    //
+    // for(let i=1 ; i<100 ; i+=2){
+    //     console.log(i + "홀수");
+    // }
+    // for(let i=50 ; i>0 ; i--){
+    //   console.log(100-(i*2-1));
+    // }
+    // console.log(Math.floor(Math.random()*10)+1);
+    // //random은 소수점만 나온다.
+    //
+    // function funcName(param1, param2){
+    //   console.log("hello" + param1 + "," + param2 + "1");
+    //   console.log("hello" + param1 + "," + param2 + "2");
+    //   // console.log("hello" + param1 + "," + param2 + "3");
+    //   // console.log("hello" + param1 + "," + param2 + "4");
+    //   // console.log("hello" + param1 + "," + param2 + "5");
+    //   return param1 + param2;
+    // }
+    //   console.log(  funcName("기아", "현대")  );
+    //
+    //   console.log(   (1+1)    );
+    //
+    //   //1번
+    //   function fact1(num){
+    //     let result = 1;
+    //     for(let i=1 ; i<=num;i++){
+    //       result = result * i;
+    //     }
+    //     console.log(result);
+    //   }
+    //
+    //   for(let i=1; i<=10 ; i++){
+    //     fact1(i);
+    //   }
+    //
+    //   //2번
+    //   function fact2(num){
+    //     let result = 1;
+    //     for(let i=1;i<=num;i++){
+    //       result = result * i;
+    //     }
+    //     return result;
+    //   }
+    // for(let i=1;i<=10 ; i++){
+    //   console.log(fact2(i));
+    // }
+
+      function fact5(num1, num2, num3){
+
+        // let maxValue = 0;
+        if( num1 > num2 && num2 > num3){
+          return(num1);
+        }else if( num2 > num1 && num1 > num3){
+          return(num2);
+        }else {
+          return(num3);
+        }
+
+         maxValue;
+      }
+      document.getElementById('textButton').addEventListener('click',function(){
+        let num1 = Number(document.getElementById('textLine1').value);
+        let num2 = Number(document.getElementById('textLine2').value);
+        let num3 = Number(document.getElementById('textLine3').value);
+
+      console.log(fact5(num1, num2, num3));
+      });
+
+
+  </script>
+</html>

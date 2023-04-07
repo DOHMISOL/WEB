@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>test1</title>
+  </head>
+  <body>
+    <input type="text" id="textLine1">
+    <input type="text" id="textLine2">
+    <br>
+    <input type="button" id='resultBtn' value="결과">
+  </body>
+  <script>
+    document.getElementById('resultBtn').addEventListener('click', function(){
+      let num1 = Number(document.getElementById('textLine1').value);
+      let num2 = Number(document.getElementById('textLine2').value);
+
+      if( num1 + num2  >= 10){
+        console.log("10이상");
+      }else{
+        console.log("10미만");
+      }
+    })
+  </script>
+</html>
