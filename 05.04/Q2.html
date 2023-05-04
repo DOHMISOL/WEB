@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>문제2</title>
+  </head>
+  <body>
+    <h1>문제2</h1>
+    <div id="inputs">
+    <input type="number">
+    </div>
+    <br>
+    <button onclick="addInput()">추가</button>
+    <button onclick="calculate()">출력</button>
+    <p id="result"></p>
+    <script>
+
+    function addInput() {
+    let inputs = document.getElementById("inputs");
+    inputs.innerHTML += '<input type="number">';
+    }
+
+    function calculate() {
+    let inputs = document.querySelectorAll("#inputs input[type=number]");
+    let sum = 0;
+    inputs.forEach(input => {
+      sum += Number(input.value);
+    });
+    let result = document.getElementById("result");
+    result.textContent = "총 합계: " + sum;
+  }
+
+    </script>
+  </body>
+</html>

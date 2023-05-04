@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>문제4</title>
+  </head>
+  <body>
+    <h1>문제4</h1>
+    국어<input type="text" id="kor" value=""> <br>
+    영어<input type="text" id="eng" value=""> <br>
+    수학<input type="text" id="math" value=""> <br><br>
+    <input type="button" id="btn1" value="입력">
+    <input type="button" id="btn2" value="석차확인">
+    <div id=ranking></div>
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+  let btn1 = document.getElementById("btn1");
+  let btn2 = document.getElementById("btn2");
+  btn1.addEventListener('click',function(){
+
+      let kor = $('#kor').val();
+      let eng = $('#eng').val();
+      let math = $('#math').val();
+
+      $.ajax({
+        url : `http://localhost/Q4calc?kor=${kor}&eng=${eng}&math=${math}`,
+        data : {},
+        success:function(data){
+        console.log(data);
+        $("#ranking").html("현재까지의 석차는 " + data + "등입니다.");
+        }
+      });
+    });
+  </script>
+</html>

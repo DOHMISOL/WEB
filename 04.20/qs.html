@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" id="num1" >
+    <input type="text" id="num2" >
+    <input type="button" name="" value="더하기" id="sumBtn">
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $("#sumBtn").click(function(){
+      let number1 = Number($("#num1").val());
+      let number2 = Number($("#num2").val());
+      //console.log(num1+num2);
+      $.ajax({
+        url : `http://localhost/qsSum?numberQS1=${number1}&numberQS2=${number2}`,
+        data : {},
+        success:function(data){
+          console.log(data);
+        }
+      })
+
+    })
+  </script>
+</html>

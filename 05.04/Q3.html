@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>문제3</title>
+  </head>
+  <body>
+    <h1>문제3</h1>
+    키(cm)<input type="text" id="height" value=""> <br>
+    몸무게<input type="text" id="weight" value=""> <br>
+    <input type="button" id="btn" value="확인">
+    <br>
+    <br>
+    BMI지수 결과 <br> <div id="bmi"></div>
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+        $('#btn').click(function(){
+
+        let height = $('#height').val();
+        let weight = $('#weight').val();
+        $.ajax({
+          url : `http://localhost/Q3calc?height=${$("#height").val()}&weight=${$("#weight").val()}`,
+          data : {},
+          success:function(data){
+          console.log(data);
+          $("#bmi").html(data);
+          }
+        });
+      });
+  </script>
+</html>

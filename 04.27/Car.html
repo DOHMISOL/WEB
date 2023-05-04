@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Car</title>
+  </head>
+  <body>
+    ------차종과 색상을 선택해주세요.-------- <br>
+    차종
+    <select id = 'select_car'>
+    <option value="1">현대</option>
+    <option value="2">기아</option>
+    <option value="3">쌍용</option>
+    <option value="4">벤츠</option>
+    <option value="5">bmw</option>
+    </select>
+    <br>
+    색상
+    <select id = 'select_color'>
+    <option value="1">빨강</option>
+    <option value="2">파랑</option>
+    <option value="3">초록</option>
+    <option value="4">노랑</option>
+    <option value="5">검정</option>
+    </select>
+    <div id="itemPrice"></div>
+    <input type="button" value = "확인" id="getCarPriceBtn">
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $('#getCarPriceBtn').click(function(){
+      let car = $('#select_car').val();
+      let color = $('#select_color').val();
+      $.ajax({
+        url : `http://localhost/CarValue?carValue=${car}&carcolor=${color}`,
+        data : {},
+        success:function(data){
+        console.log(data);
+        $("#itemPrice").html(data);
+        }
+      });
+    });
+  </script>
+</html>
