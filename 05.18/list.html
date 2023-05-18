@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    list
+    <div id="listArea">
+
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+    $.ajax({
+      url: `http://localhost/getList`,
+      data: {},
+      success: function(data) {
+        for(let i =0; i<data.length;i++){
+          let post = data[i];
+          console.log(post);
+          $('#listArea').append(`<div id="post${post.no}"> 번호 : ${post.no} / 이름 : ${post.name}
+          <input type = "button" name="" value="보기" onclick="moveToDetailPage(${post.no})">
+          <input type = "button" name="" value="삭제" onclick="deletePost(${post.no})"></div>`) //post는 객체이므로 .no 삽입
+        }
+      }
+    });
+
+    function moveToDetailPage(no) {
+      location.href = `http://localhost/detailPage?${no}`;
+    }
+
+
+    function deletePost(no) {
+      $.ajax({
+        url: `http://localhost/deletePost?no=${no}`,
+        data: {},
+        success: function(data) {
+              if(data.affectedRows==1){  //몇개의 데이터가 영향을 받았는지?
+                $(`#post${no}`).remove();
+              }
+          }
+      });
+    }
+  </script>
+</html>

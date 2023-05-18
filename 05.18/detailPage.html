@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="nameArea"></div>
+    <div id="birthArea"></div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    let query = location.search.substring(1); //물음표가 1개니까 '?' split을 할 필요X
+    console.log(query);
+
+    $.ajax({
+      url: `http://localhost/getList2?no=${query}`,
+      data: {},
+      success: function(data) {
+          let post = data[0];
+          console.log(post);
+          $('#nameArea').append(`이름 : ${post.name}`)
+          $('#birthArea').append(`생년월일 : ${post.birth}`)
+
+      }
+    });
+  </script>
+</html>

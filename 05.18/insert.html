@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Insert
+    <div id="listArea">
+
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+    $.ajax({
+      url: `http://localhost/insertList`,
+      data: {},
+      success: function(data) {
+          let post = data;
+          console.log(post);
+          $('#listArea').append(post.affectedRows);
+        }
+    });
+
+
+  </script>
+</html>
